@@ -1,5 +1,3 @@
-#Join my channel – Hacler_boy's'
-
 import requests
 import json
 import random
