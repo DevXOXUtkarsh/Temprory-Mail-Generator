@@ -5,7 +5,6 @@ import re
 from faker import Faker
 from time import sleep
 
-
 faker = Faker()
 
 def GenPas():
@@ -38,14 +37,14 @@ def GetMessage(email):
                 for msg in messages:
                     body_text = msg.get('body_text', '')
                     subject = msg.get('subject', '')
-                    print(f"الموضوع: {subject}")
+                    print(f"Subject: {subject}")
                     match = re.search(r'\b\d{4}\b', body_text)
                     if match:
                         code = match.group(0)
-                        print(f"رمز التأكيد الخاص بك هو: {code}")
+                        print(f"Your verification code is: {code}")
                         return code
             else:
-                print("لا توجد رسائل")
+                print("No messages yet.")
         else:
             print(f"Failed to get messages. Status code: {response.status_code}")
 
@@ -103,5 +102,4 @@ while True:
         token = Reg(email, password)
         if token:
             print(f"Registration completed. Token: {token}")
-            
-            #Made By Utkarsh
+
